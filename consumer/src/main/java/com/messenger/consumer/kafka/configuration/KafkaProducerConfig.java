@@ -1,4 +1,4 @@
-package com.messenger.consumer.configuration;
+package com.messenger.consumer.kafka.configuration;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;

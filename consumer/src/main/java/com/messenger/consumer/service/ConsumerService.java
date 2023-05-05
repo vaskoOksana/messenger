@@ -17,7 +17,6 @@ public class ConsumerService {
     @Value(value = "${spring.kafka.topic.name}")
     private String topicName;
 
-
     public void sendMessage(String message) {
         CompletableFuture<SendResult<String, String>> future = kafkaTemplate.send(topicName, message);
         future.whenComplete((result, ex) -> {
@@ -29,6 +28,5 @@ public class ConsumerService {
                     message + "] due to : " + ex.getMessage());
             }
         });
-
     }
 }
