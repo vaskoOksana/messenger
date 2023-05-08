@@ -1,6 +1,6 @@
 package com.messenger.publisher.api;
 
-import com.messenger.publisher.dto.Message;
+import com.messenger.publisher.dto.MessageDTO;
 import com.messenger.publisher.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,7 @@ public class DummyController {
 
     @GetMapping("/message")
     public void postBody(@RequestParam String name, @RequestParam String message) {
-        serv.sendToSpecificUser(name, Message.builder().text(message).build());
+        serv.sendToSpecificUser(MessageDTO.builder().receiver(name).text(message).build());
     }
 
 }

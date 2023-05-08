@@ -1,4 +1,4 @@
-package com.messenger.consumer.kafka.configuration;
+package com.messenger.consumer.configuration;
 
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
