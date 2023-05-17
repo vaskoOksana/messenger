@@ -14,4 +14,7 @@ public class MessageDTO {
         this.receiver = receiver;
     }
 
+    public MessageDTO() {
+    }
+
 }
