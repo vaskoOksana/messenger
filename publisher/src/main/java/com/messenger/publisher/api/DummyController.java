@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class DummyController {
 
     @Autowired
-    MessageService serv;
+    MessageService messageService;
 
     @GetMapping("/message")
-    public void postBody(@RequestParam String name, @RequestParam String message) {
-        serv.sendToSpecificUser(MessageDTO.builder().receiver(name).text(message).build());
+    public void postBody(@RequestParam String message, @RequestParam String receiver) {
+        messageService.sendToSpecificUser(MessageDTO.builder().text(message).receiver(receiver).build());
     }
 
 }

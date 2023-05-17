@@ -14,6 +14,8 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
+    private final String ROLE = "USER";
+
     @Value(value = "${spring.security.user-name.1}")
     private String userName;
 
@@ -22,9 +24,6 @@ public class SecurityConfig {
 
     @Value(value = "${spring.security.password}")
     private String password;
-
-    @Value(value = "${spring.security.role}")
-    private String role;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -46,13 +45,13 @@ public class SecurityConfig {
         UserDetails user = User.withDefaultPasswordEncoder()
             .username(userName)
             .password(password)
-            .roles(role)
+            .roles(ROLE)
             .build();
 
         UserDetails user2 = User.withDefaultPasswordEncoder()
             .username(userName2)
             .password(password)
-            .roles(role)
+            .roles(ROLE)
             .build();
 
         return new InMemoryUserDetailsManager(user, user2);
