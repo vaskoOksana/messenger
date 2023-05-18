@@ -1,5 +1,6 @@
 package com.messenger.publisher.configuration;
 
+import com.messenger.publisher.service.WebSocketMessageHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
