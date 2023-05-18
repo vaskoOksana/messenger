@@ -37,7 +37,7 @@ public class UserMessageStorageService {
         messageRepository.save(userMessage);
     }
 
-    public void createUserMessage(MessageDTO message) {
+    private void createUserMessage(MessageDTO message) {
         log.info("Creating user message in redis for key: {}", message.getReceiver());
         messageRepository.save(new UserMessage(Collections.singletonList(message.getText()), message.getReceiver()));
     }
